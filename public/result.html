@@ -1,0 +1,35 @@
+<!-- public/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cake Name</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-pink-50 min-h-screen flex items-center justify-center font-sans"
+  >
+    <div
+      class="bg-white p-8 rounded-xl shadow-xl text-center border border-pink-200"
+    >
+      <h1 class="text-3xl font-bold text-pink-600 mb-4">
+        🎉 Your Cake Name Is 🎉
+      </h1>
+      <h2 class="text-2xl text-gray-700 mb-2" id="cakeNameText">Loading...</h2>
+      <a
+        href="/"
+        class="mt-4 inline-block bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg transition"
+      >
+        Bake Another 🍰
+      </a>
+    </div>
+
+    <script>
+      // Grab the cake name from URL params
+      const params = new URLSearchParams(window.location.search);
+      const cakeName = params.get("name");
+      document.getElementById("cakeNameText").innerText = cakeName + " 🤤";
+    </script>
+  </body>
+</html>
